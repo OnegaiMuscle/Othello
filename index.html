@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+  <meta name="description" content="Othello Game - Play against AI.">
+  <meta name="keywords" content="Othello, Reversi, Free, Game, AI, Board Game, Strategy, Tactics, HTML, CSS, JavaScript, HFR">
+  <meta name="author" content="TRAN Duc Tai">
+  <meta name="google" value="notranslate">
+  <title>Othello</title>
+  <link rel="canonical" href="https://onegaimuscle.github.io/Othello/">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+</head>
+<body>
+  <noscript>
+    <p>"You need to enable JavaScript to run this app."</p>
+  </noscript>
+  <h1><a href="https://onegaimuscle.github.io/" target="_blank">&lt;Othello/&gt;</a></h1>
+  <div class="othello-game">
+    <div class="board-container">
+      <div id="othello-board"></div>
+    </div>
+    <div class="game-info">
+      <div class="score-display">
+        <div class="player-score" id="black-player">
+          <span class="score-indicator black"></span>
+          <span id="black-score">2</span>
+        </div>
+        <div id="othello-status-container">
+          <span id="othello-status">Begin Game</span>
+        </div>
+        <div class="player-score" id="white-player">
+          <span class="score-indicator white"></span>
+          <span id="white-score">2</span>
+        </div>
+      </div>
+      <div class="game-actions">
+        <div class="switch-container">
+          <label class="switch">
+            <input type="checkbox" id="show-hints" checked>
+            <span class="slider"></span>
+          </label>
+          <span>Show Valid Moves</span>
+        </div>
+        <button id="new-game-btn">New Game</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Game Modal -->
+  <div id="new-game-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>New Game</h2>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Who starts with Black?</label>
+          <div class="option-cards">
+            <div class="option-card selected" data-player="human">
+              <span>You</span>
+            </div>
+            <div class="option-card" data-player="ai">
+              <span>AI</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Choose AI Difficulty</label>
+          <div class="option-cards">
+            <div class="difficulty-card" data-difficulty="noob">Noob</div>
+            <div class="difficulty-card" data-difficulty="easy">Easy</div>
+            <div class="difficulty-card selected" data-difficulty="medium">Medium</div>
+            <div class="difficulty-card" data-difficulty="hard">Hard</div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="start-new-game">Begin</button>
+        <button id="cancel-new-game" class="secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./othelloUI.js"></script>
+</body>
+</html>
